@@ -1,34 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Blog preview card</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <title>Frontend Mentor | Blog preview card</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        @font-face {
+            font-family: "Figtree Extra";
+            src: url("./assets/fonts/static/Figtree-ExtraBold.ttf");
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        @font-face {
+            font-family: "Figtree Semi";
+            src: url("./assets/fonts/static/Figtree-SemiBold.ttf");
+            font-style: normal;
+            font-weight: 600;
+        }
+
+        @font-face {
+            font-family: "Figtree Italic";
+            src: url("./assets/fonts/Figtree-Italic-VariableFont_wght.ttf");
+            font-style: italic;
+            font-weight: normal;
+        }
+
+        @font-face {
+            font-family: "Figtree Regular";
+            src: url("./assets/fonts/Figtree-VariableFont_wght.ttf");
+            font-style: normal;
+            font-weight: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            --color-gray-950: #111;
+            --color-white: #fff;
+            --color-yellow: #f4d04e;
+            --color-gray-500: #6b6b6b;
+            --font-family-extra: "Figtree Extra";
+            --font-family-semi: "Figtree Semi";
+            --font-family-italic: "Figtree Italic";
+            --font-family-normal: "Figtree Regular";
+
+        }
+
+        body {
+            background: #215152;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        article {
+            border: 1px solid var(--color-gray-950);
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            flex: 0 1 24rem;
+            min-height: 32.62rem;
+            box-shadow: 8px 8px 0 0 #000;
+            background: var(--color-white);
+        }
+
+        .image img {
+            max-width: 100%;
+            border-radius: 0.62rem;
+        }
+
+        article > div:nth-child(2) {
+            border-radius: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            width: 5.12rem;
+            height: 1.81rem;
+            background: var(--color-yellow);
+            margin-top: calc(24rem / 16);
+        }
+
+        article div:nth-child(2) a {
+            font-family: var(--font-family-extra), sans-serif;
+            font-size: 0.88rem;
+            line-height: 150%;
+            color: var(--color-gray-950);
+            text-decoration: none;
+        }
+        article > div:nth-child(3){
+            font-family: var(--font-family-normal), sans-serif;
+            font-weight: 500;
+            font-size: 0.88rem;
+            line-height: 150%;
+            color: var(--color-gray-950);
+            margin-top: calc(12rem / 16);
+        }
+        article > h1{
+            margin-top: calc(12rem / 16);
+        }
+        article > h1 a{
+            text-decoration: none;
+            color: var(--color-gray-950);
+            font-family: var(--font-family-extra), sans-serif;
+            font-size: clamp(1.25rem,calc(4vw + 2rem),1.5rem);
+            line-height: 150%;
+        }
+        article > h1 a:hover{
+            color: var(--color-yellow);
+        }
+        article > p:nth-child(5){
+            font-family: var(--font-family-normal), sans-serif;
+            font-weight: 500;
+            font-size: clamp(0.08rem,calc(4vw + 2rem),1rem);
+            line-height: 150%;
+            color: var(--color-gray-500);
+            margin-top: calc(12rem / 16);
+            max-width: 21rem;
+        }
+        .flex{
+            margin-top: calc(24rem / 16);
+            display: flex;
+            align-items: center;
+            height: 2rem;
+            gap: 12px;
+        }
+        .flex div:nth-child(2){
+            font-family: var(--font-family-extra), sans-serif;
+            font-size: 0.88rem;
+            line-height: 2rem;
+            color: var(--color-gray-950);
+        }
+        .flex img{
+            max-height: 100%;
+        }
+        .flex div{
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
+<main role="main">
+    <article role="article">
+        <div class="image" role="img">
+            <img src="./assets/images/illustration-article.svg" alt="some picture">
+        </div>
+        <div role="textbox"><a href="#">Learning</a></div>
+        <div role="textbox">Published 21 Dec 2023</div>
+        <h1 role="heading"><a href="#">HTML & CSS foundations</a></h1>
+        <p role="textbox">
+            These languages are the backbone of every website, defining structure, content, and presentation.
+        </p>
+        <div class="flex">
+            <div role="img">
+                <img src="./assets/images/image-avatar.webp" alt="some man">
+            </div>
+            <div role="textbox">
+                Greg Hooper
+            </div>
+        </div>
+    </article>
+</main>
 
-  Learning
-
-  Published 21 Dec 2023
-
-  HTML & CSS foundations
-
-  These languages are the backbone of every website, defining structure, content, and presentation.
-
-  Greg Hooper
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
 </body>
 </html>
